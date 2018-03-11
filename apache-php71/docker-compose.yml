@@ -1,0 +1,15 @@
+php71:
+  build: .
+  container_name: php71
+  volumes:
+    - "/Users/max2thousand/www/php71:/var/www"
+    - "/Users/max2thousand/www/apache2_php71/apache2:/etc/apache2"
+  ports:
+    - "80:80"
+    #- "9000:9000"
+  environment:
+    PHP_XDEBUG_ENABLED: 1 # Set 1 to enable.
+    XDEBUG_CONFIG: remote_host=172.17.0.1
+  external_links:
+    - mariadb:mariadb
+    - solr:solr

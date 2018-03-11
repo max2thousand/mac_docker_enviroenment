@@ -1,0 +1,9 @@
+mariadb:
+  build: .
+  container_name: mariadb
+  volumes:
+    - "/Users/max2thousand/www/mariadb/:/var/lib/mysql/"
+  ports:
+    - "3306:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
